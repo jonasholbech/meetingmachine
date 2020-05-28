@@ -117,39 +117,69 @@ export default Machine(
         },
       },
       is_there_an_agenda_with_clear_goals: {
+        entry: assign({
+          header: "Is there an agenda with clear goals?",
+          description: "",
+        }),
         on: {
           YES: "is_there_enough_time_to_get_to_the_desired_outcome",
           NO: "add_agenda_and_goals",
         },
       },
       add_agenda_and_goals: {
+        entry: assign({
+          header: "Add agenda and goals",
+          description: "Define clear outcomes and a process to get to them.",
+        }),
         on: {
           DONE: "is_there_enough_time_to_get_to_the_desired_outcome",
         },
       },
       is_there_enough_time_to_get_to_the_desired_outcome: {
+        entry: assign({
+          header: "Is there enough time to get to the desired outcome?",
+          description: "",
+        }),
         on: {
           YES: "is_there_a_strong_meeting_facilitator",
           NO: "alter_goals_or_reschedule",
         },
       },
       alter_goals_or_reschedule: {
+        entry: assign({
+          header: "Alter goals or reschedule",
+          description:
+            "Make sure meaningful goals can be achieved within your timeframe. Or reschedule it",
+        }),
         on: {
           DONE: "is_there_a_strong_meeting_facilitator",
         },
       },
       is_there_a_strong_meeting_facilitator: {
+        entry: assign({
+          header: "Is there a strong meeting facilitator?",
+          description: "",
+        }),
         on: {
           YES: "lets_have_a_meeting",
           NO: "find_a_driver",
         },
       },
       find_a_driver: {
+        entry: assign({
+          header: 'Find a "driver"',
+          description:
+            "You need someone who can drive the meeting towards its goals without running over participants.",
+        }),
         on: {
           DONE: "lets_have_a_meeting",
         },
       },
       lets_have_a_meeting: {
+        entry: assign({
+          header: "Let's have a meeting!",
+          description: "",
+        }),
         type: "final",
       },
     },
