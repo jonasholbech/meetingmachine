@@ -18,9 +18,6 @@ function setup() {
   buildDOM(state);
 }
 function buildDOM(state) {
-  console.log(state);
-  console.log(state.context);
-  console.log(state.nextEvents);
   app.querySelector("h1").textContent = state.context.header;
   app.querySelector("p").textContent = state.context.description;
   app.querySelector(".buttons").innerHTML = "";
