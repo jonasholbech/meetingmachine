@@ -87,18 +87,31 @@ export default Machine(
         },
       },
       can_the_key_participants_and_decision_makers_attend: {
+        entry: assign({
+          header: "Can the key participants and decision makers attend?",
+          description: "",
+        }),
         on: {
           YES: "is_there_pre_work_requested_of_key_participants",
           NO: "is_there_still_value",
         },
       },
       is_there_pre_work_requested_of_key_participants: {
+        entry: assign({
+          header: "Is there pre-work requested of key participants",
+          description: "",
+        }),
         on: {
           YES: "is_there_an_agenda_with_clear_goals",
           NO: "add_pre_work",
         },
       },
       add_pre_work: {
+        entry: assign({
+          header: "Add pre-work",
+          description:
+            "Do as much as possible before the meeting to cut down meeting time.",
+        }),
         on: {
           DONE: "is_there_an_agenda_with_clear_goals",
         },
