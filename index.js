@@ -20,6 +20,9 @@ function setup() {
 function buildDOM(state) {
   app.querySelector("h1").textContent = state.context.header;
   app.querySelector("p").textContent = state.context.description;
+  state.context.description
+    ? app.querySelector("h1").classList.remove("single")
+    : app.querySelector("h1").classList.add("single");
   app.querySelector(".buttons").innerHTML = "";
   state.nextEvents.forEach((ev) => {
     const b = document.createElement("button");
