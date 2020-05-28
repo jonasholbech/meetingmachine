@@ -5558,11 +5558,9 @@ function setup() {
 }
 
 function buildDOM(state) {
-  console.log(state);
-  console.log(state.context);
-  console.log(state.nextEvents);
   app.querySelector("h1").textContent = state.context.header;
   app.querySelector("p").textContent = state.context.description;
+  state.context.description ? app.querySelector("h1").classList.remove("single") : app.querySelector("h1").classList.add("single");
   app.querySelector(".buttons").innerHTML = "";
   state.nextEvents.forEach(function (ev) {
     var b = document.createElement("button");
@@ -5599,7 +5597,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65425" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49230" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
