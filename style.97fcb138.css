@@ -1,22 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  padding: 0;
   display: flex;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background: royalblue;
 }
 
 .app {
   min-width: 400px;
   max-width: 80vw;
-  border: 1px solid #808080;
+  border: 1px solid none;
   border-radius: 3px;
-  box-shadow: 1px 1px 1px royalblue;
+  box-shadow: 1px 1px 1px none;
   padding: 2rem;
   text-align: center;
+  background: royalblue;
+  color: white;
+}
+.app p {
+  max-width: 40ch;
 }
 .app h1 {
-  color: royalblue;
   letter-spacing: 0.012em;
 }
 .app h1.single {
@@ -31,13 +42,19 @@ body {
   all: unset;
   font-weight: bold;
   cursor: pointer;
-  border: 1px solid #808080ee;
+  border: 1px solid none;
   border-radius: 3px;
-  box-shadow: 1px 1px 1px #808080ee;
+  box-shadow: 1px 1px 1px white;
   padding: 0.5rem 1rem;
+  transition: all 0.3s;
+  background: white;
+  color: royalblue;
 }
 .app .buttons button:hover, .app .buttons button:active, .app .buttons button:focus {
-  background: lightblue;
+  background: royalblue;
+  color: white;
+  border: 1px solid white;
+  box-shadow: 1px 1px 1px transparent;
 }
 
 /*# sourceMappingURL=/style.97fcb138.css.map */
